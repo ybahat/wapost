@@ -1,0 +1,20 @@
+[Unit]
+Description=wapost - post to a WhatsApp channel over HTTP
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=wapost
+WorkingDirectory=/var/lib/wapost
+EnvironmentFile=/etc/wapost.env
+ExecStart=/usr/local/bin/wapost serve
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/wapost
+
+[Install]
+WantedBy=multi-user.target

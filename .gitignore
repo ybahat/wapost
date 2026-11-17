@@ -1,0 +1,5 @@
+wapost.exe
+wapost-linux-*
+*.db
+*.db-*
+*.env
